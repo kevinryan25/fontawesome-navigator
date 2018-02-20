@@ -1,0 +1,23 @@
+{
+  "name": "fontawesome-navigator",
+  "version": "1.0.0",
+  "description": "A fontawesome reference reference",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "deploy": "grunt build && electron ."
+  },
+  "keywords": [
+    "fontawesome",
+    "navigator",
+    "function",
+    "reference",
+    "electron"
+  ],
+  "author": "kevinryan25",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "fs": "0.0.1-security"
+  }
+}

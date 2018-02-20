@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta charset='utf-8'>
+        <title>Fontawesome navigator</title>
+        
+        <link rel='stylesheet' href='assets/fontawesome/css/fontawesome-all.min.css'/>
+        <link rel='stylesheet' href='assets/stylesheets/main.css'/>
+        <script src='scripts/angular.min.js'></script>
+        <script src='scripts/main.js'></script>
+
+    </head>
+
+    <body>
+        <div class='root' ng-app='FaNavigatorApp' ng-controller='MainController' ng-init='init()'>
+            <div>
+                <div class='header'>
+                    <div class='branding'>
+                        <h1>Fontawesome navigator</h1>
+                    </div>
+                    <div class='controls'>
+                        <div class='query searchbar'>
+                            <label for='input'>Search for:</label>
+                            <input type='search' placeholder='Search for' name='s' ng-model='query' ng-change='update()'/>
+                        </div>
+                        <div class='types'>
+                            <p>
+                                <label for='regular'>Regular</label>
+                                <input type='checkbox' name='regular' ng-model='types.regular' ng-change='update()'/>
+                            </p>
+                            <p>
+                                <label for='solid'>Brands</label>
+                                <input type='checkbox' name='solid' ng-model='types.brands' ng-change='update()'/>
+                            </p>
+                            <p>
+                                <label for='brands'>Solid</label>
+                                <input type='checkbox' name='brands' ng-model='types.solid' ng-change='update()'/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class='main'>
+                    <div class='grid'>
+                        <ul>
+                            <li ng-repeat='glyph in currentGlyphs'>
+                                <div class='icon'><i ng-class="'fa-'+ glyph.name + ' ' + glyph.type"></i></div>
+                                <div class='className'><code>.{{ glyph.type }} </code> <code>.fa-{{ glyph.name }}</code></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src='scripts/glyphs.js'></script>
+    </body>
+</html>

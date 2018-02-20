@@ -1,0 +1,125 @@
+
+@import "searchbar.scss";
+
+
+$horPadding: 30pt;
+$headerHeight: 120pt;
+
+/**
+ *  LAYOUT
+ */
+*{
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+}
+
+body{
+}
+
+.root{
+    position: relative;
+    margin: -8px;
+    box-sizing: border-box;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+
+    & .header{
+        display: inline-block;
+        width: 100vw;
+        height: $headerHeight;
+        border-bottom: 2px solid #ccc;
+
+
+        & .branding{
+
+            & h1{
+                margin: 0px;
+                font-weight: 300;
+                padding: 10pt;
+                padding-left: $horPadding;
+                padding-top: 20pt;
+            }
+        }
+
+        & .controls{
+            padding: 0pt $horPadding;
+
+            & .query{
+                padding: 8pt 0pt;
+            }
+
+            & .types{
+
+                & p{
+                    padding-bottom: 10pt;
+                    margin: 0px;
+                    display: inline-block;
+                    padding-right: 30pt;
+                }
+            }
+        }
+    }
+
+    & .main{
+        position: absolute;
+        bottom: 0px;
+        text-align: center;
+        padding: 4pt $horPadding;
+        display: inline-block;
+        width: 100vw;
+        //height: 200px;
+        height: -webkit-calc(100% - 130pt);
+        overflow-y: scroll;
+        box-sizing: border-box;
+
+        & .grid{
+            width: 100%;
+
+            & ul{
+                margin: 0px;
+                padding: 0px;
+                display: grid;
+                grid-template-columns: repeat(5, 20%);
+            }
+
+            & li{
+                box-shadow: 0.3px 0.3px 0.3px rgba(0, 0, 0, 0.3);
+                padding: 5px;
+                margin: 0px;
+                padding: 0px;
+                display: inline-block;
+                height: 100pt;
+                background:white;
+                margin: 3pt;
+                position: relative;
+
+                & .className{
+                    display: block;
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    padding-bottom: 2pt;
+
+                    & code{
+                        font-family: monospace;
+                    }
+                }
+
+                & .icon{
+                    position: absolute;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+
+                    & i{
+                        padding-top: 18pt;
+                        font-size: 43pt;
+                    }
+                }
+            }
+        }
+    }
+}
